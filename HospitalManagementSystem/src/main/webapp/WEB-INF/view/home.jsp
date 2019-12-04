@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Welcome Page</title>
+<title>Insert title here</title>
 </head>
 <body>
-<a href="toaddDiagnosis">Add Diagnosis</a>
-<a href="createPhysician">Add Physician</a>
-<a href="getPhysiciandetails">Search Physician</a>
-<a href="toEnroll">Enroll Patient</a>
-<a href="getpatientid">Display History</a>
+Welcome!!!!!
+<a href="getpatientid">Patient Details</a>
 </body>
 </html>

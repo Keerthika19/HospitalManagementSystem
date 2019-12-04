@@ -11,13 +11,22 @@ import com.HospitalManagementSystem.model.Physician;
 public interface HospitalManagementService {
 	public Diagnosis addPatientDiagnosis(Diagnosis diagnosis);
 
-	Physician createPhysician(Physician physician);
+	public Physician createPhysician(Physician physician);
 
-	List<Physician> searchPhysician(String departmentName, String state,
+	public List<Physician> searchPhysician(String departmentName, String state,
 			String insurancePlan);
 
-	Patient existByName(String firstName, String lastName);
+	public Patient existByName(String firstName, String lastName);
 
 	public Patient enrollPatient(@Valid Patient patient);
+
+	public List<Diagnosis> findByPatientId(int patientId);
+
+	public List<Diagnosis> findByDiagnosisIdAndSymptoms(Integer diagnosisId,
+			String symptoms);
+
+	public int checkId(int patientId);
+
+	public Patient findByDiagnosisId(Integer diagnosisId);
 
 }

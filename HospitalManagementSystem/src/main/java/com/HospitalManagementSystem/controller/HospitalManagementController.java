@@ -1,6 +1,7 @@
 package com.HospitalManagementSystem.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -39,8 +40,21 @@ public class HospitalManagementController {
 	@RequestMapping(value="/toaddDiagnosis")
 	public String login(Model model){
 		model.addAttribute("details", new Diagnosis());
-		return "diagnosis";
+		return "enterPatientId";
 	}
+	
+	@RequestMapping(value="/checkPatientId")
+	public String checkId(@ModelAttribute("details")Diagnosis diagnosis,Model model){
+		int result = this.hospitalManagementService.checkId(diagnosis.getPatientId());
+		if(result==0){
+			return "noPatientId";
+		}
+		else{
+		model.addAttribute("details", diagnosis);
+		return "diagnosis";
+		}
+	}
+	
 	
 
 	@PostMapping(value="/savediagnosis")
@@ -59,13 +73,6 @@ public class HospitalManagementController {
 		return modelAndView;
 	}
 	
-	/*@RequestMapping(value="/toaddPhysician")
-	public String home(Model model) {
-		logger.info("Inside the Main controller-index ");
-		model.addAttribute("details", new Physician());
-		
-		return "index";
-	}*/
 	
 	@RequestMapping(value="/createPhysician")
 	public String create( @ModelAttribute("details") Physician physician, Model model)
@@ -94,12 +101,7 @@ public class HospitalManagementController {
 		 }
 	}
 	
-	/*@RequestMapping(value = "/")
-	public String search() {
-		return "index";
-
-	}
-*/
+	
 	@RequestMapping(value = "/getPhysiciandetails")
 	public String getdetails() {
 		return "PhysicianSearch";
@@ -147,5 +149,48 @@ public class HospitalManagementController {
 			logger.info("first & last name entered is already present");
 			return "invalidName";
 		}
+	}
+	
+	@RequestMapping(value = "/getpatientid")
+	public String getPatientId() {
+		return "patient";
+	}
+
+	@RequestMapping(value="/checkId")
+	public String checkId2(@RequestParam("patientId") int patientId,Model model){
+		int result = this.hospitalManagementService.checkId(patientId);
+		if(result==0){
+			return "noPatientId2";
+		}
+		else{
+			List<Diagnosis> diagnosis = this.hospitalManagementService
+					.findByPatientId(patientId);
+			model.addAttribute("diagnosis", diagnosis);
+			System.out.println("List elements : " + diagnosis);
+			return "DisplaySymptoms";
+		}
+	}
+
+	/*@RequestMapping(value = "/searchSymptoms")
+	public String getSymptoms(@RequestParam("pid") int patientId, Model model) {
+		System.out.println("pid:" + patientId);
+		List<Diagnosis> diagnosis = this.hospitalManagementService
+				.findByPatientId(patientId);
+		model.addAttribute("diagnosis", diagnosis);
+		System.out.println("List elements : " + diagnosis);
+		return "DisplaySymptoms";
+	}*/
+
+	@RequestMapping(value="/displayHistory")
+	public String getSymptoms(@RequestParam Map<Integer,String> requestParams, Model model){
+		Integer diagnosisId=Integer.parseInt(requestParams.get("diagnosisid"));
+		String symptoms=requestParams.get("symptom");
+		System.out.println("Diag Id:"+diagnosisId+"\tsymptom:"+symptoms);
+		List<Diagnosis> listDiagnosis=this.hospitalManagementService.findByDiagnosisIdAndSymptoms(diagnosisId, symptoms);
+		model.addAttribute("listdiagnosis", listDiagnosis);
+		/*Patient patient =this.hospitalManagementService.findByDiagnosisId(diagnosisId);
+		model.addAttribute("patient", patient);*/
+        System.out.println("List elements : "+listDiagnosis);          
+		return "DisplayDiagnosis";
 	}
 }

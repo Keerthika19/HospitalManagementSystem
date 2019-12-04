@@ -100,8 +100,8 @@ input[type="submit"], input[type="reset"] {
 
 
 		<div class="body">
-			<label>Enter the Patient ID</label><br> <input type="text"
-				name="patientId" autofocus="true" required="true"
+			<label>Patient ID</label><br> <input type="text"
+				name="patientId" autofocus="true" required="true" value="${details.patientId }" readonly="readonly"
 				placeholder="Patient ID" pattern="[0-9]+" title="Enter a valid Id" /><br>
 
 			<label>Symptoms of the patient</label><br>

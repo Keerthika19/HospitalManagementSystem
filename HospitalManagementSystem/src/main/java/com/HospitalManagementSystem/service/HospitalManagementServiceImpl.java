@@ -71,11 +71,53 @@ public class HospitalManagementServiceImpl implements HospitalManagementService 
 	}
 
 	@Override
-	@Transactional
 	public Patient existByName(String firstName, String lastName) {
 
 		Patient p = this.hospitalManagementDaoPatient.findByFirstNameAndLastName(firstName, lastName);
 		logger.info("existsByName method in service");
 		return p;
 	}
+
+
+
+
+	@Override
+	public List<Diagnosis> findByPatientId(int patientId) {
+		return this.hospitalManagementDaoDiagnosis.findByPatientId(patientId);
+	}
+
+
+
+
+	@Override
+	public List<Diagnosis> findByDiagnosisIdAndSymptoms(Integer diagnosisId,
+			String symptoms) {
+		return this.hospitalManagementDaoDiagnosis.findByDiagnosisIdAndSymptoms(diagnosisId, symptoms);
+	}
+
+
+
+
+	@Override
+	public int checkId(int patientId) {
+		Patient patient=this.hospitalManagementDaoPatient.findByPatientId(patientId);
+		if(patient==null){
+			return 0; 
+		}
+		else{
+		return 1;
+		}
+	}
+
+
+
+
+	@Override
+	public Patient findByDiagnosisId(Integer diagnosisId) {
+		int patientId=this.hospitalManagementDaoDiagnosis.findByDiagnosisId(diagnosisId);
+		return this.hospitalManagementDaoPatient.findByPatientId(patientId);
+	}
+
+
+	
 }
