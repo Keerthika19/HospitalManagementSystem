@@ -64,6 +64,33 @@ public class Diagnosis {
 	public Diagnosis() {
 		super();
 	}
+	
+	
+
+	public Diagnosis(int diagnosisId,
+			@NotNull(message = "Id cannot be null") int patientId,
+			@NotNull(message = "Field cannot be null") String symptoms,
+			@NotNull(message = "Field cannot be null") String diagnosis,
+			@NotNull(message = "Field cannot be null") String administrator,
+			@NotNull(message = "Field cannot be null") Date dateOfDiagnosis,
+			@NotNull(message = "Field cannot be null") String followUp,
+			String dateOfFollowUp, float billAmount, long cardNo,
+			String modeOfPayment) {
+		super();
+		this.diagnosisId = diagnosisId;
+		this.patientId = patientId;
+		this.symptoms = symptoms;
+		this.diagnosis = diagnosis;
+		this.administrator = administrator;
+		this.dateOfDiagnosis = dateOfDiagnosis;
+		this.followUp = followUp;
+		this.dateOfFollowUp = dateOfFollowUp;
+		this.billAmount = billAmount;
+		this.cardNo = cardNo;
+		this.modeOfPayment = modeOfPayment;
+	}
+
+
 
 	public int getPatientId() {
 		return patientId;

@@ -15,6 +15,15 @@ td{
 width=100%;
 }
 </style>
+<script type="text/javascript">
+
+function payment(){
+	document.getElementById("cardNo").disabled=true;
+}
+function payment1(){
+	document.getElementById("cardNo").disabled=false;
+}
+</script>
 </head>
 <body>
 	<form action="/savebill" modelAttribute="details" method="post">
@@ -61,19 +70,19 @@ width=100%;
 			</tr>
 			<tr>
 				<td>Bill Amount</td>
-				<td><input type="text" name="billAmount" required="true"
-					value="${details.billAmount}" /></td>
+				<td><input type="text" name="billAmount" autofocus="true" required="true" /></td>
 			</tr>
 			<tr>
 				<td>Payment Mode</td>
-				<td width="100%"><select name="modeOfPayment">
-						<option value="card">Cash</option>
-						<option value="Cash">Card</option>
+				<td><select name="modeOfPayment" placeholder="Mode of Payment" onchange="payment1()">
+						<!-- <option disabled="disabled">Payment Mode</option> -->
+						<option value="Cash" onclick="payment()">Cash</option>
+						<option value="Card" onclick="payment1()">Card</option>
 				</select></td>
 			</tr>
 			<tr>
 				<td>Card Number</td>
-				<td><input type="text" name="cardNo" value="${details.cardNo}" /></td>
+				<td><input type="text" name="cardNo" id="cardNo" disabled="true"/></td>
 			</tr>
 
 			<tr>
