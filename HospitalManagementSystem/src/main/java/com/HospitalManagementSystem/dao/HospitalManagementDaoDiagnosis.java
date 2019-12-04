@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.HospitalManagementSystem.model.Diagnosis;
 
 @Repository
-public interface HospitalManagementDao extends CrudRepository<Diagnosis,Integer>{
+public interface HospitalManagementDaoDiagnosis extends CrudRepository<Diagnosis,Integer>{
 
 }

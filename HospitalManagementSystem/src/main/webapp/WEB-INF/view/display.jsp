@@ -9,17 +9,17 @@
 <body>
 <h3 align="center">Details Saved Successfully!!</h3>
 <table border=1 align="center">
-<tr><th colspan="1" rowspan="1">Patient ID</th>
-<th colspan="1" rowspan="1">Diagnosis Id</th><th colspan="1" rowspan="1">Administrator</th>
-<th colspan="1" rowspan="1">Mode of Payment</th>
-<th colspan="1" rowspan="1">Bill Amount</th></tr>
-<tr><td colspan="1" rowspan="1">${details.patientId}</td>
-<td colspan="1" rowspan="1">${details.diagnosisId}</td>
-<td colspan="1" rowspan="1">${details.administrator}</td>
-<td colspan="1" rowspan="1">${details.modeOfPayment}</td>
-<td colspan="1" rowspan="1">${details.billAmount}</td></tr>
+<tr><th>Patient ID</th>
+<th>Diagnosis Id</th><th colspan="1" rowspan="1">Administrator</th>
+<th>Mode of Payment</th>
+<th>Bill Amount</th></tr>
+<tr><td>${details.patientId}</td>
+<td>${details.diagnosisId}</td>
+<td>${details.administrator}</td>
+<td>${details.modeOfPayment}</td>
+<td>${details.billAmount}</td></tr>
 </table>
 <br>
-<a href="diagnosis.jsp" align="center">Home</a>
+<a href="/" align="center">Home</a>
 </body>
 </html>
