@@ -14,6 +14,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "Patient")
 public class Patient implements Serializable {

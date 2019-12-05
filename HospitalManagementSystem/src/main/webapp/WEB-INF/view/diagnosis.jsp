@@ -106,7 +106,7 @@ input[type="submit"], input[type="reset"] {
 
 			<label>Symptoms of the patient</label><br>
 			<form:input type="text" path="symptoms" required="true"
-				placeholder="Symptoms" pattern="[a-zA-Z0-9]+"
+				placeholder="Symptoms" pattern="[a-zA-Z0-9 ]+"
 				title="Do not use special characters" />
 			<br> <label>Diagnosis Details</label><br>
 			<form:input path="diagnosis" required="true"

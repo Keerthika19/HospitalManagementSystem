@@ -1,5 +1,6 @@
 package com.HospitalManagementSystem.model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -9,11 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "Diagnosis")
-public class Diagnosis {
+public class Diagnosis implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -28,7 +29,7 @@ public class Diagnosis {
 	@NotNull(message = "Field cannot be null")
 	private String symptoms;
 
-	@Column(name = "diagnosis")
+	@Column(name = "diagnosisDetails")
 	@NotNull(message = "Field cannot be null")
 	private String diagnosis;
 
@@ -38,8 +39,6 @@ public class Diagnosis {
 
 	@NotNull(message = "Field cannot be null")
 	@Column(name = "dateOfDiagnosis")
-	// @Past
-	// @DateTimeFormat(pattern="dd-MM-yyyy")
 	private Date dateOfDiagnosis;
 
 	@NotNull(message = "Field cannot be null")
@@ -47,9 +46,6 @@ public class Diagnosis {
 	private String followUp;
 
 	@Column(name = "dateOfFollowUp")
-	// @NotNull(message = "Field cannot be null")
-	// @Future
-	// @DateTimeFormat(pattern="dd-MM-yyyy")
 	private String dateOfFollowUp;
 
 	@Column(name = "billAmount")
@@ -64,8 +60,6 @@ public class Diagnosis {
 	public Diagnosis() {
 		super();
 	}
-	
-	
 
 	public Diagnosis(int diagnosisId,
 			@NotNull(message = "Id cannot be null") int patientId,
@@ -89,8 +83,6 @@ public class Diagnosis {
 		this.cardNo = cardNo;
 		this.modeOfPayment = modeOfPayment;
 	}
-
-
 
 	public int getPatientId() {
 		return patientId;
