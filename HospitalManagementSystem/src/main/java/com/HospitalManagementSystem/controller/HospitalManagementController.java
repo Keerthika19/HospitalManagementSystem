@@ -1,7 +1,9 @@
 package com.HospitalManagementSystem.controller;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -47,6 +49,8 @@ public class HospitalManagementController {
 			return "noPatientId";
 		} else {
 			model.addAttribute("details", diagnosis);
+			List<Physician> physicians=this.hospitalManagementService.getPhysician();
+			model.addAttribute("physicianList",physicians);
 			return "diagnosis";
 		}
 	}
@@ -104,11 +108,13 @@ public class HospitalManagementController {
 	public String search(@RequestParam("departmentName") String departmentName,
 			@RequestParam("state") String state,
 			@RequestParam("insurancePlan") String insurancePlan, Model model) {
-
-		List<Physician> physician = this.hospitalManagementService
+		List<Physician> physicians = this.hospitalManagementService
 				.searchPhysician(departmentName, state, insurancePlan);
-
-		model.addAttribute("physiciandetail", physician);
+		model.addAttribute("physiciandetail", physicians);
+		if(physicians.isEmpty()){
+			return "noPhysician";
+		}
+		else
 		return "PhysicianDetails";
 
 	}
@@ -165,13 +171,16 @@ public class HospitalManagementController {
 	@RequestMapping(value = "/displayHistory")
 	public String getSymptoms(@RequestParam Map<Integer, String> requestParams,
 			Model model) {
-		Integer diagnosisId = Integer
-				.parseInt(requestParams.get("diagnosisid"));
+		int diagnosisId=0;
+		Integer patientId=Integer.parseInt(requestParams.get("patientid"));
 		String symptoms = requestParams.get("symptom");
-		System.out.println("Diag Id:" + diagnosisId + "\tsymptom:" + symptoms);
+		//System.out.println("Diag Id:" + diagnosisId + "\tsymptom:" + symptoms);
 		List<Diagnosis> listDiagnosis = this.hospitalManagementService
-				.findByDiagnosisIdAndSymptoms(diagnosisId, symptoms);
+				.findByDiagnosisIdAndSymptoms(patientId, symptoms);
 		model.addAttribute("listdiagnosis", listDiagnosis);
+		for (Diagnosis diagnosis2 : listDiagnosis) {
+			diagnosisId=diagnosis2.getDiagnosisId();
+		}
 		Patient patient = this.hospitalManagementService
 				.findByDiagnosisId(diagnosisId);
 		model.addAttribute("patient", patient);

@@ -1,6 +1,7 @@
 package com.HospitalManagementSystem.service;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,11 @@ public class HospitalManagementServiceImpl implements HospitalManagementService 
 		return this.hospitalManagementDaoDiagnosis.save(diagnosis);
 	}
 
+	@Override
+	public List<Physician> getPhysician() {
+		return (List<Physician>) this.hospitalManagementDaoPhysician.findAll();
+	}
+	
 	@Transactional
 	@Override
 	public Physician createPhysician(Physician physician) {
@@ -47,10 +53,8 @@ public class HospitalManagementServiceImpl implements HospitalManagementService 
 	@Override
 	public List<Physician> searchPhysician(String departmentName, String state,
 			String insurancePlan) {
-
 		List<Physician> list = this.hospitalManagementDaoPhysician
 				.findByDepartmentName(departmentName, state, insurancePlan);
-
 		return list;
 
 	}
@@ -80,7 +84,7 @@ public class HospitalManagementServiceImpl implements HospitalManagementService 
 	public List<Diagnosis> findByDiagnosisIdAndSymptoms(Integer diagnosisId,
 			String symptoms) {
 		return this.hospitalManagementDaoDiagnosis
-				.findByDiagnosisIdAndSymptoms(diagnosisId, symptoms);
+				.findByPatientIdAndSymptoms(diagnosisId, symptoms);
 	}
 
 	@Override
@@ -100,5 +104,7 @@ public class HospitalManagementServiceImpl implements HospitalManagementService 
 				.findByDiagnosisId(diagnosisId);
 		return this.hospitalManagementDaoPatient.findByPatientId(patientId);
 	}
+
+	
 
 }

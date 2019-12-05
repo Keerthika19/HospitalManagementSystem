@@ -8,16 +8,19 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.HospitalManagementSystem.model.Physician;
-@Repository
-public interface HospitalManagementDaoPhysician extends CrudRepository<Physician,Integer>{
-  
-	public Physician findByFirstNameAndLastName(String firstName,String lastName);
 
-	@Query(value = " from Physician where departmentName=:departmentName and state=:state and insurancePlan=:insurancePlan")
-	public List<Physician> findByDepartmentName(
-			@Param("departmentName") String departmentName,
-			@Param("state") String state,
-			@Param("insurancePlan") String insurancePlan);
-	
+@Repository
+public interface HospitalManagementDaoPhysician extends
+		CrudRepository<Physician, Integer> {
+
+	public Physician findByFirstNameAndLastName(String firstName,
+			String lastName);
+
+	@Query(value = "select * from Physician where department_name=? and state=? and insurance_plan=?", nativeQuery = true)
+	public List<Physician> findByDepartmentName(String departmentName,
+			String state, String insurancePlan);
+
+	@Query(" from Physician")
+	public List<Physician> findAll();
 
 }

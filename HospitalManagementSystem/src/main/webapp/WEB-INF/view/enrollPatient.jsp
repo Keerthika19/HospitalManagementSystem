@@ -7,6 +7,10 @@ pageEncoding="ISO-8859-1"%>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Patient Details</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
 div {
 margin-left: 30%;
@@ -128,5 +132,6 @@ placeholder="Date of Diagnosis" /> --%>
 <input type="reset" name="Reset" value="Reset" />
 </div>
 </form:form>
+<a href="/">Home</a>
 </body>
 </html>

@@ -7,10 +7,10 @@
 <title>Welcome Page</title>
 </head>
 <body>
+<a href="toEnroll">Enroll Patient</a>
 <a href="toaddDiagnosis">Add Diagnosis</a>
 <a href="createPhysician">Add Physician</a>
 <a href="getPhysiciandetails">Search Physician</a>
-<a href="toEnroll">Enroll Patient</a>
 <a href="getpatientid">Display History</a>
 </body>
 </html>

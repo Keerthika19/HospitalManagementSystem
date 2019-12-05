@@ -1,6 +1,7 @@
 package com.HospitalManagementSystem.service;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -28,5 +29,7 @@ public interface HospitalManagementService {
 	public int checkId(int patientId);
 
 	public Patient findByDiagnosisId(Integer diagnosisId);
+
+	public List<Physician> getPhysician();
 
 }

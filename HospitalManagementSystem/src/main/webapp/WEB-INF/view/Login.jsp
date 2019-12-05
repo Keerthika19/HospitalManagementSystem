@@ -29,18 +29,21 @@ padding: 1px;
 	margin-right: 30%;
 	padding: 1px;
 }
+
 .body {
 	background-color: lightgray;
 	margin-left: 30%;
 	margin-right: 30%;
 	padding: 1px;
 }
+
 .footer {
 	background-color: skyblue;
 	margin-left: 30%;
 	margin-right: 30%;
 	padding: 1px;
 }
+
 input, select {
 	margin: 2%;
 	width: 95%;
@@ -48,12 +51,15 @@ input, select {
 	margin: 8px;
 	box-sizing: border-box;
 }
+
 label {
 	margin: 2%;
 }
+
 input[type="radio"] {
 	width: 5%;
 }
+
 input[type="submit"], input[type="reset"] {
 	width: 45%;
 }
@@ -68,16 +74,17 @@ input[type="submit"], input[type="reset"] {
 	<form action="/addPhysician" modelAttribute="details">
 		<div class="body">
 
-			<label>First Name</label> <input type="text" name="firstName" placeholder="FirstName"
+			<label>First Name</label> <input type="text" name="firstName"
+				placeholder="FirstName" required="true" pattern="[A-Za-z]{1,15}"
+				title="Name should only contain Alphabets" /><br> <label>LastName</label>
+			<input type="text" name="lastName" placeholder="LastName"
 				required="true" pattern="[A-Za-z]{1,15}"
-				title="Name should only contain Alphabets" /><br> 
-				<label>LastName</label> <input type="text" name="lastName" placeholder="LastName" required="true"
-				pattern="[A-Za-z]{1,15}" title="Name should only contain Alphabets" /><br>
-			
-			<label>Department Name</label>
+				title="Name should only contain Alphabets" /><br> <label>Department
+				Name</label>
 			<!-- <input type="text" name="departmentName"/></br> -->
-			 <select name="departmentName">
-			   <option value="General">General</option>
+			<select name="departmentName">
+				<option value="" disabled selected>Select the Department</option>
+				<option value="General">General</option>
 				<option value="Urology">Urology</option>
 				<option value="Neurology">Neurology</option>
 				<option value="Oncology">Oncology</option>
@@ -85,15 +92,16 @@ input[type="submit"], input[type="reset"] {
 				<option value="Gynecology">Gynecology</option>
 				<option value="Dental">Dental</option>
 				<option value="Gastroentrology">Gastroentrology</option>
-				
-		 </select><br> 
-			
-			<label>Educational Qualification</label> <input type="text"
-				name="educationQualification" placeholder="EducationalQualification" required="true" pattern="[A-Za-z ]*$"
+
+			</select><br> <label>Educational Qualification</label> <input type="text"
+				name="educationQualification" placeholder="EducationalQualification"
+				required="true" pattern="[A-Za-z ]*$"
 				title="Name should only contain Alphabets" /> <label>Years
-				of Experience</label> <input type="text" name="yearsOfExp" placeholder="yearsOfExperience" required="true"
-				pattern="[0-9]" title="years should only contain Numbers" /><br>
-			<label> State</label> <select name="state">
+				of Experience</label> <input type="text" name="yearsOfExp"
+				placeholder="yearsOfExperience" required="true" pattern="[0-9]"
+				title="years should only contain Numbers" /><br> <label>
+				State</label> <select name="state">
+				<option value="" disabled selected>Select the State</option>
 				<option value="TamilNadu">TamilNadu</option>
 				<option value="Kerala">Kerala</option>
 				<option value="Karanataka">Karanataka</option>
@@ -101,25 +109,16 @@ input[type="submit"], input[type="reset"] {
 				<option value="uttar Pradesh">uttar Pradesh</option>
 				<option value="Madhaya Pradesh">Madhaya Pradesh</option>
 				<option value="Maharashtra">Maharashtra</option>
-			</select><br> 
-			<label>InsurancePlan:</label> <select name="insurancePlan">
-				<option value="Bharti AXA Health Insurance">Bharti AXA
-					Health Insurance</option>
-				<option value="HDFC ERGO Health Insurance">HDFC ERGO Health
-					Insurance</option>
-				<option value="National Health Insurance">National Health
-					Insurance</option>
-
-				<option value="Royal Sundaram Health Insurance">Royal
-					Sundaram Health Insurance</option>
-
-				<option value="Universal Sompo General Health Insurance">Universal
-					Sompo General Health Insurance</option>
-
-				<option value="Religare Health Insurance">Religare Health
-					Insurance</option>
-
-				<option value="Star Health Insurance">Star Health Insurance</option>
+			</select><br> <label>InsurancePlan:</label> <select name="insurancePlan">
+				<option value="" disabled selected>Select the Insurance
+					Plan</option>
+				<option>Bharti AXA Health Insurance</option>
+				<option>HDFC ERGO Health Insurance</option>
+				<option>National Health Insurance</option>
+				<option>Royal Sundaram Health Insurance</option>
+				<option>Universal Sompo General Health Insurance</option>
+				<option>Religare Health Insurance</option>
+				<option>Star Health Insurance</option>
 
 
 

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -110,18 +111,14 @@ input[type="submit"], input[type="reset"] {
 				title="Do not use special characters" />
 			<br> <label>Diagnosis Details</label><br>
 			<form:input path="diagnosis" required="true"
-				placeholder="Diagnosis Details" pattern="[a-zA-Z0-9]+"
+				placeholder="Diagnosis Details" pattern="[a-zA-Z0-9 ]+"
 				title="Do not use special characters" />
 			<br> <label>Administrator Name</label><br>
 			<form:select path="administrator" required="true">
 				<form:option value="" disabled="disabled">Administrator name</form:option>
-				<form:option value="Dr.Ragu">Dr.Ragu</form:option>
-				<form:option value="Dr.Shiva">Dr.Shiva</form:option>
-				<form:option value="Dr.Karthik">Dr.Karthik</form:option>
-				<form:option value="Dr.Mahesh">Dr.Mahesh</form:option>
-				<form:option value="Dr.Indhira">Dr.Indhira</form:option>
-				<form:option value="Dr.Raja">Dr.Raja</form:option>
-				<form:option value="Dr.Keerthi">Dr.Keerthi</form:option>
+				<c:forEach var="list" items="${physicianList}">
+				<form:option value="Dr.${list.firstName} ${list.lastName}">Dr.${list.firstName} ${list.lastName}</form:option>
+				</c:forEach>
 			</form:select>
 			
 			<br> <label>Date of Diagnosis</label><br>

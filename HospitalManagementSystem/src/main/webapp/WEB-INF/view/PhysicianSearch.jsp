@@ -11,108 +11,121 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <title>Search</title>
 <style>
-.header{
-background-color: lightblue;
-color: white;
-width:60%;
-padding: 30px;
-margin-left: 30%;
-margin-right: 30%;
+.header {
+	background-color: lightblue;
+	color: white;
+	width: 60%;
+	padding: 30px;
+	margin-left: 30%;
+	margin-right: 30%;
 }
-.dropfirst{
-width:50%;
-margin-left: 33.5%;
-margin-right: 30%;
+
+.dropfirst {
+	width: 50%;
+	margin-left: 33.5%;
+	margin-right: 30%;
 }
-.dropsec{
-width:50%;
-margin-left: 33.5%;
-margin-right: 30%;
+
+.dropsec {
+	width: 50%;
+	margin-left: 33.5%;
+	margin-right: 30%;
 }
-.dropthird{
-width:50%;
-margin-left: 33.5%;
-margin-right: 30%;
+
+.dropthird {
+	width: 50%;
+	margin-left: 33.5%;
+	margin-right: 30%;
 }
-h1{
-text-align: center;
+
+h1 {
+	text-align: center;
 }
-.option{
-margin-left: 33.5%;
-margin-right: 30%;
+
+.option {
+	margin-left: 33.5%;
+	margin-right: 30%;
 }
-.full{
-background-color: grey;
-width:50%;
-margin-left: 33.3%;
-margin-right: 30%;
+
+.full {
+	background-color: grey;
+	width: 50%;
+	margin-left: 33.3%;
+	margin-right: 30%;
 }
 </style>
 </head>
 <body>
 	<a href="/">Home</a>
 	<form action="search" method="get">
-<div class="container ">
-		<div class=header>
-	     <h1>Find Your Doctor</h1>
-</div>
-</div>
-			<div class=full>
-		<div class="dropfirst ">
-			<div class="form-group">
-				<select class="form-control" name="departmentName" required="true" oninvalid="this.setCustomValidity('Please select a Department')" oninput="setCustomValidity('')">
-					<option value="" disabled selected>Select the Department</option>
-					<option>Urology</option>
-					<option>Neurology</option>
-					<option>Oncology</option>
-					<option>Cardiology</option>
-					<option>Gynecology</option>
-					<option>Dental</option>
-					<option>Gastroentrology</option>
-				</select>
+		<div class="container ">
+			<div class=header>
+				<h1>Find Your Doctor</h1>
 			</div>
 		</div>
-		<div class="dropsec">
-			<div class="form-group">
-				<select class="form-control" name="state" required="true" oninvalid="this.setCustomValidity('Please select a State')" oninput="setCustomValidity('')">
-					<option value="" disabled selected>Select the State</option>
-					<option>Tamil nadu</option>
-					<option>Kerala</option>
-					<option>Karanataka</option>
-					<option>Andra Pradesh</option>
-					<option>uttra Pradesh</option>
-					<option>Madhaya Pradesh</option>
-					<option>Maharashtra</option>
-				</select>
+		<div class=full>
+			<div class="dropfirst ">
+				<div class="form-group">
+					<select class="form-control" name="departmentName" required="true"
+						oninvalid="this.setCustomValidity('Please select a Department')"
+						oninput="setCustomValidity('')">
+						<option value="" disabled selected>Select the Department</option>
+						<option value="General">General</option>
+						<option value="Urology">Urology</option>
+						<option value="Neurology">Neurology</option>
+						<option value="Oncology">Oncology</option>
+						<option value="Cardiology">Cardiology</option>
+						<option value="Gynecology">Gynecology</option>
+						<option value="Dental">Dental</option>
+						<option value="Gastroentrology">Gastroentrology</option>
+					</select>
+				</div>
+			</div>
+			<div class="dropsec">
+				<div class="form-group">
+					<select class="form-control" name="state" required="true"
+						oninvalid="this.setCustomValidity('Please select a State')"
+						oninput="setCustomValidity('')">
+						<option value="" disabled selected>Select the State</option>
+						<option value="TamilNadu">TamilNadu</option>
+						<option value="Kerala">Kerala</option>
+						<option value="Karanataka">Karanataka</option>
+						<option value="Andra Pradesh">Andra Pradesh</option>
+						<option value="uttar Pradesh">uttar Pradesh</option>
+						<option value="Madhaya Pradesh">Madhaya Pradesh</option>
+						<option value="Maharashtra">Maharashtra</option>
+					</select>
+				</div>
+			</div>
+
+
+			<div class="dropthird">
+				<div class="form-group">
+					<select class="form-control" name="insurancePlan" required="true"
+						oninvalid="this.setCustomValidity('Please select a Insurance Plan')"
+						oninput="setCustomValidity('')">
+						<option value="" disabled selected>Select the Insurance
+							Plan</option>
+						<option>Bharti AXA Health Insurance</option>
+						<option>HDFC ERGO Health Insurance</option>
+						<option>National Health Insurance</option>
+						<option>Royal Sundaram Health Insurance</option>
+						<option>Universal Sompo General Health Insurance</option>
+						<option>Religare Health Insurance</option>
+						<option>Star Health Insurance</option>
+					</select>
+				</div>
+			</div>
+
+
+
+
+			<div class=option>
+				<input type="submit" class="btn btn-info" value="Search "> <input
+					type="reset" class="btn btn-info" value="Reset ">
 			</div>
 		</div>
 
-
-		<div class="dropthird">
-			<div class="form-group">
-				<select class="form-control" name="insurancePlan"  required="true" oninvalid="this.setCustomValidity('Please select a Insurance Plan')" oninput="setCustomValidity('')">
-					<option value="" disabled selected>Select the Insurance
-						Plan</option>
-					<option>Bharti AXA Health Insurance</option>
-					<option>HDFC ERGO Health Insurance</option>
-					<option>National Health Insurance</option>
-					<option>Royal Sundaram Health Insurance</option>
-					<option>Universal Sompo General Health Insurance</option>
-					<option>Religare Health Insurance</option>
-					<option>Star Health Insurance</option>
-				</select>
-			</div>
-		</div>
-
-
-
-
-		<div class= option>
-			<input type="submit" class="btn btn-info" value="Search "> 
-			<input type="reset" class="btn btn-info" value="Reset ">
-</div>
-</div>
-		
 	</form>
 
 </body>

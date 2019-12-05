@@ -5,7 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Patient History</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<h1>Diagnosis Details!!!</h1>
@@ -14,11 +18,11 @@
 		<tr>	<td>Last Name</td><td>${patient.lastName}</td></tr>
 			<tr><td>Mobile Number</td><td>${patient.contactNumber}</td></tr>
 		<tr><td>Email</td><td>${patient.email}</td></tr>
+		<tr><td>Patient Id</td><td>${patient.patientId}</td></tr>
 	</table>
 	<table border="1" cellpadding="5">
 
 		<tr>
-			<th>Patient Id</th>
 			<th>Diagnosis Id</th>
 			
 			<th>Symptom</th>
@@ -33,7 +37,6 @@
 		</tr>
 		<c:forEach var="list" items="${listdiagnosis}" >
 			<tr>
-				<td><c:out value="${list.patientId}" /></td>
 				<td><c:out value="${list.diagnosisId}" /></td>
 				<td><c:out value="${list.symptoms}" /></td>
 				<td><c:out value="${list.diagnosis}" /></td>
@@ -47,5 +50,6 @@
 			</tr>
 		</c:forEach>
 	</table>
+	<a href="/">Home</a>
 </body>
 </html>
