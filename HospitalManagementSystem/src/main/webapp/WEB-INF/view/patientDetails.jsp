@@ -15,8 +15,8 @@
 </style>
 </head>
 <body>
-<h2>Successfully added patient</h2>
-<table border="1" style="width:50%" align="center">
+<div class="jumbotron">Successfully added patient</div>
+<table class="table table-striped">
 <tr>
 <th>First Name</th>
 <th>Last Name</th>
@@ -28,6 +28,6 @@
     </tr>
 
 </table>
-<a href="/">Home</a>
+
 </body>
 </html>

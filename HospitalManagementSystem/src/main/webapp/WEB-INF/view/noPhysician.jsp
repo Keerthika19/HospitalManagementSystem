@@ -9,9 +9,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script>
+  function submit(){
+	  location.href="getPhysiciandetails";
+  }
+  </script>
 </head>
 <body>
 <div class="jumbotron"><b>No Such Physician Details Found!!</b></div>
-<a href="getPhysiciandetails">Search Physician</a>
-</body>
+<button type="submit" id="submit" onclick="submit()">Search Physician</button>
+<body>
 </html>

@@ -11,12 +11,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <body>
 	<form action="checkPatientId">
-		<label>Enter the Patient ID</label><br> 
+		<div>Enter the Patient ID</div>
+		<div> 
 		<input type="text" name="patientId" autofocus="true" required="true"
 			placeholder="Patient ID" pattern="[0-9]+" title="Enter a valid Id" /><br>
-			<input type="submit" name="Submit" value="Submit" /> 
-
+			<button type="submit" name="Submit" value="Submit" align="center">Search</button> 
+</div>
 	</form>
-	<a href="/">Home</a>
 </body>
 </html>

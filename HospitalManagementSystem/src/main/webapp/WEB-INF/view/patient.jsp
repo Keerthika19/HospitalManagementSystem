@@ -13,9 +13,10 @@
 <body>
 
 <form action="checkId">
-Enter patient Id: <input type="text" name="patientId" id="patientId" placeholder="Enter your Patient Id">
-<input type="submit" value="Submit" name="submit">
+<div class="header">Enter patient Id</div>
+<div class="content"> <input type="text" name="patientId" id="patientId" placeholder="Enter your Patient Id">
+<button type="submit" value="Submit" name="submit">Search</button>
+</div>
 </form>
-<a href="/">Home</a>
 </body>
 </html>

@@ -82,7 +82,7 @@ function payment1(){
 			</tr>
 			<tr>
 				<td>Card Number</td>
-				<td><input type="text" name="cardNo" id="cardNo" disabled="true"/></td>
+				<td><input type="text" name="cardNo" id="cardNo" disabled="true" pattern="[0-9]{12}" title="Enter a valid 12 digit Card Number"/></td>
 			</tr>
 
 			<tr>

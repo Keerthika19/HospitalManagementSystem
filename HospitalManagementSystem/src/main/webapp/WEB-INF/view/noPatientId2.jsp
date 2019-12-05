@@ -9,9 +9,14 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script>
+  function submit(){
+	  location.href="getpatientid";
+  }
+  </script>
 </head>
 <body>
 <div class="jumbotron"><b>No such patient id Found</b></div>
-<a href="/getpatientid">Enter Patient ID</a>
+<button type="submit" id="submit" onclick="submit()">Enter Patient ID</button>
 </body>
 </html>

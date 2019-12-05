@@ -29,9 +29,8 @@ Text-align: center;
 </style>
 </head>
 <body>
-<a  href="/" >Home</a>
 <h1> Physician Details</h1>
-<table border=1 align="center">
+<table class="table">
 <tr><th>PhysicianId</th><th>FirstName</th><th>LastName</th><th>Department</th><th>EducationalQualication</th><th>YOP</th><th>State</th><th>InsurancePlan</th></tr>
 <c:forEach var="display" items="${physiciandetail}">
 
@@ -50,6 +49,5 @@ Text-align: center;
 
 </c:forEach>
 </table>
-<a href="/">Home</a>
 </body>
 </html>
