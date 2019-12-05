@@ -14,9 +14,26 @@
 	  location.href="getPhysiciandetails";
   }
   </script>
+  <style>
+  div {
+	background-color: lightgrey;
+	color: black;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+width: 40%;
+padding: 30px;
+margin-top: 5%;
+margin-left: 30%;
+margin-right: 30%;
+}
+button{
+align: center;
+}
+</style>
 </head>
 <body>
-<div class="jumbotron"><b>No Such Physician Details Found!!</b></div>
+<div ><b>No Such Physician Details Found!!</b></div>
 <button type="submit" id="submit" onclick="submit()">Search Physician</button>
 <body>
 </html>

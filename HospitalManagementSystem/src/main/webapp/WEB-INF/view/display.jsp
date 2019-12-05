@@ -12,12 +12,12 @@
 </head>
 <body>
 <h3 align="center">Details Saved Successfully!!</h3>
-<table border=1 align="center">
+<table class="table table-striped">
 <tr><th>Patient ID</th>
 <th>Diagnosis Id</th><th colspan="1" rowspan="1">Administrator</th>
 <th>Mode of Payment</th>
 <th>Bill Amount</th></tr>
-<tr><td>${details.patientId}</td>
+<tr><td><b>${details.patientId}</b></td>
 <td>${details.diagnosisId}</td>
 <td>${details.administrator}</td>
 <td>${details.modeOfPayment}</td>

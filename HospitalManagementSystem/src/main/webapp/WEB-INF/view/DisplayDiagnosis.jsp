@@ -13,16 +13,16 @@
 </head>
 <body>
 	<h1>Diagnosis Details!!!</h1>
-	<table>
+	<table class="table">
 	<tr><td>First Name</td><td>${patient.firstName}</td></tr>
 		<tr>	<td>Last Name</td><td>${patient.lastName}</td></tr>
 			<tr><td>Mobile Number</td><td>${patient.contactNumber}</td></tr>
 		<tr><td>Email</td><td>${patient.email}</td></tr>
 		<tr><td>Patient Id</td><td>${patient.patientId}</td></tr>
 	</table>
-	<table border="1" cellpadding="5">
+	<table class="table table-striped">
 
-		<tr>
+		<tr class="info">
 			<th>Diagnosis Id</th>
 			
 			<th>Symptom</th>

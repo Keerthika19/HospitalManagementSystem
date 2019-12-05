@@ -28,6 +28,6 @@
     </tr>
 
 </table>
-
+<a href="/" align="center">Home</a>
 </body>
 </html>

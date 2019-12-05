@@ -12,8 +12,22 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+<style>
+div {
+	background-color: lightgreen;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+width: 40%;
+padding: 30px;
+margin-top: 5%;
+margin-left: 30%;
+margin-right: 30%;
+}
+</style>
 <body>
-	<div class="jumbotron">Sucessfully added Physician</div>
+	<div>Sucessfully added Physician</div>
 	<table class="table table-striped">
 		<tr>
 			<th>First Name</th>
@@ -28,5 +42,6 @@
 		</tr>
 
 	</table>
+	<a href="/" align="center">Home</a>
 </body>
 </html>

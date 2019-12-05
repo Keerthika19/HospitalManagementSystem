@@ -13,13 +13,16 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>Symptoms!!!</h1>
+	<table class="table table-striped">
+	<th><h3>Symptoms</h3></th>
 	<c:forEach var="list" items="${diagnosis}">
 		<c:url value="/displayHistory" var="url">
 			<c:param name="patientid" value="${list.patientId}" />
 			<c:param name="symptom" value="${list.symptoms}" />
 		</c:url>
-		<li><a href="${url}"><c:out value="${list.symptoms}" /></a></li>
+		<tr><td><a href="${url}"><c:out value="${list.symptoms}" /></a></td></tr>
 	</c:forEach>
+	</table>
+	<a href="/" align="center">Home</a>
 </body>
 </html>

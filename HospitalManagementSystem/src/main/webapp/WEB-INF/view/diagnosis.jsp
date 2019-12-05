@@ -26,20 +26,22 @@
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
-	margin-left: 30%;
-	margin-right: 30%;
-	padding: 5px;
+width: 40%;
+padding: 30px;
+margin-top: 5%;
+margin-left: 30%;
+margin-right: 30%;
 }
 
 .body {
-	background-color: lightgray;
+	background-color: gray;
 	margin-left: 30%;
 	margin-right: 30%;
 	padding: 1px;
 }
 
 .footer {
-	background-color: skyblue;
+	background-color: gray;
 	margin-left: 30%;
 	margin-right: 30%;
 	padding: 1px;
@@ -101,6 +103,7 @@ input[type="submit"], input[type="reset"] {
 
 
 		<div class="body">
+		<br>
 			<label>Patient ID</label><br> <input type="text"
 				name="patientId" autofocus="true" required="true" value="${details.patientId }" readonly="readonly"
 				placeholder="Patient ID" pattern="[0-9]+" title="Enter a valid Id" /><br>

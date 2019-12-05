@@ -7,90 +7,123 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Diagnosis Details</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <style type="text/css">
-td{
-width=100%;
+.header {
+	background-color: skyblue;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+width: 40%;
+padding: 30px;
+margin-top: 5%;
+margin-left: 30%;
+margin-right: 30%;
 }
+
+.body {
+	background-color: gray;
+	margin-left: 30%;
+	margin-right: 30%;
+	padding: 1px;
+}
+
+.footer {
+	background-color: gray;
+	margin-left: 30%;
+	margin-right: 30%;
+	padding: 1px;
+}
+
+input, select {
+	margin: 2%;
+	width: 95%;
+	padding: 12px 20px;
+	margin: 8px;
+	box-sizing: border-box;
+}
+
+label {
+	margin-left: 2%;
+}
+
+input[type="radio"] {
+	width: 5%;
+}
+
+input[type="submit"], input[type="reset"] {
+	width: 45%;
+}
+
 </style>
 <script type="text/javascript">
-
-function payment(){
-	document.getElementById("cardNo").disabled=true;
-}
-function payment1(){
-	document.getElementById("cardNo").disabled=false;
-}
+	function payment() {
+		document.getElementById("cardNo").disabled = true;
+	}
+	function payment1() {
+		document.getElementById("cardNo").disabled = false;
+	}
 </script>
 </head>
 <body>
 	<form action="/savebill" modelAttribute="details" method="post">
-		<table align="center" class="table">
-			<tr>
-				<td colspan="1" rowspan="1">Patient ID</td>
-				<td><input type="text" name="patientId"
-					value="${details.patientId}" readonly="readonly" /></td>
-			</tr>
-			<tr>
-				<td><b>Diagnosis ID</b></td>
-				<td><input type="text" name="diagnosisId"
-					value="${details.diagnosisId}" readonly="readonly" /></td>
-			</tr>
-			<tr>
-				<td>Symptoms</td>
-				<td><input type="text" name="symptoms"
-					value="${details.symptoms}" readonly="readonly" /></td>
-			</tr>
-			<tr>
-				<td>Diagnosis Details</td>
-				<td><input name="diagnosis" value="${details.diagnosis}"
-					readonly="readonly" /></td>
-			</tr>
-			<tr>
-				<td>Administrator name</td>
-				<td><input type="text" name="administrator"
-					value="${details.administrator}" readonly="readonly" /></td>
-			</tr>
-			<tr>
-				<td>Date of diagnosis</td>
-				<td><input type="text" name="dateOfDiagnosis"
-					value="${details.dateOfDiagnosis}" readonly="readonly" /></td>
-
-			</tr>
-			<tr>
-				<td colspan="1" rowspan="1">Is follow Up needed?</td>
-				<td><input type="text" name="followUp"  value="${details.followUp}"/></td>
-			</tr>
-			<tr>
-				<td>Follow Up date</td>
-				<td><input type="text" name="dateOfFollowUp"
-					value="${details.dateOfFollowUp}" readonly="readonly" /></td>
-			</tr>
-			<tr>
-				<td>Bill Amount</td>
-				<td><input type="text" name="billAmount" autofocus="true" required="true" /></td>
-			</tr>
-			<tr>
-				<td>Payment Mode</td>
-				<td><select name="modeOfPayment" placeholder="Mode of Payment" onchange="payment1()">
-						<!-- <option disabled="disabled">Payment Mode</option> -->
-						<option value="Cash" onclick="payment()">Cash</option>
-						<option value="Card" onclick="payment1()">Card</option>
-				</select></td>
-			</tr>
-			<tr>
-				<td>Card Number</td>
-				<td><input type="text" name="cardNo" id="cardNo" disabled="true" pattern="[0-9]{12}" title="Enter a valid 12 digit Card Number"/></td>
-			</tr>
-
-			<tr>
-				<td></td>
-				<td><input type="submit" value="Submit" /> <input type="reset"
-					value="Reset" /></td>
-			</tr>
-		</table>
+		<div class="header">
+			<h1>Bill Details</h1>
+		</div>
+		<div class="body">
+		
+		<br>
+		<label>Patient Id</label><br>
+		<input type="text" name="patientId"
+					value="${details.patientId}" readonly="readonly" />
+					
+		<label>Diagnosis Id</label><br>
+		<input type="text" name="diagnosisId"
+					value="${details.diagnosisId}" readonly="readonly" />
+					
+					<label>Symptoms of the patient</label><br>
+			<input type="text" name="symptoms" value="${details.symptoms}" />
+			
+			<br> <label>Diagnosis Details</label><br>
+			<input type="text" name="diagnosis"  value="${details.diagnosis}"/>
+					
+					<label>Administrator</label><br>					
+		<input type="text" name="administrator"
+					value="${details.administrator}" readonly="readonly" />
+					 <label>Date of Diagnosis</label><br>
+			<input type="date" name="dateOfDiagnosis" value="${details.dateOfDiagnosis}" readonly="readonly" />
+			
+			<label>Is Follow Up needed?</label><br> <input
+					type="text" name="followUp" value="${details.followUp}" readonly="readonly">
+					
+					<label>Date of Follow Up</label><br>
+			<input type="text" name="dateOfFollowUp" value="${details.dateOfFollowUp}" readonly="readonly"/>
+			
+			<label>Bill Amount</label><br> 
+			<input type="text"
+				name="billAmount" autofocus="true" required="true" />
+				 
+				 <label>Payment	Mode</label><br> 
+				 <select name="modeOfPayment"
+				placeholder="Mode of Payment" onchange="payment1()">
+					<!-- <option disabled="disabled">Payment Mode</option> -->
+					<option value="Cash" onclick="payment()">Cash</option>
+					<option value="Card" onclick="payment1()">Card</option>
+			</select> 
+			<label>Card Number</label><br>
+		
+			<input type="text" name="cardNo" id="cardNo" disabled="true" />
+			</div>
+		<div class="footer">
+			<input type="submit" value="Submit" /> <input type="reset"
+				value="Reset" />
+		</div>
 	</form>
 </body>
 </html>

@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @SuppressWarnings("serial")
@@ -21,27 +22,26 @@ public class Diagnosis implements Serializable {
 	@Column(name = "diagnosisId")
 	private int diagnosisId;
 
+	
 	@Column(name = "patientId")
-	@NotNull(message = "Id cannot be null")
 	private int patientId;
 
+	
 	@Column(name = "symptoms")
-	@NotNull(message = "Field cannot be null")
 	private String symptoms;
 
+	
 	@Column(name = "diagnosisDetails")
-	@NotNull(message = "Field cannot be null")
 	private String diagnosis;
 
-	@NotNull(message = "Field cannot be null")
+	
 	@Column(name = "administrator")
 	private String administrator;
 
-	@NotNull(message = "Field cannot be null")
+	
 	@Column(name = "dateOfDiagnosis")
 	private Date dateOfDiagnosis;
 
-	@NotNull(message = "Field cannot be null")
 	@Column(name = "followUp")
 	private String followUp;
 

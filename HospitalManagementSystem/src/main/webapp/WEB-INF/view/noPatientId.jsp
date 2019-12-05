@@ -14,9 +14,26 @@
 	  location.href="toaddDiagnosis";
   }
   </script>
+  <style>
+  div {
+	background-color: lightgrey;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+width: 40%;
+padding: 30px;
+margin-top: 5%;
+margin-left: 30%;
+margin-right: 30%;
+}
+button{
+align: center;
+}
+</style>
 </head>
 <body>
-<div class="jumbotron"><b>No such patient id Found</b></div>
+<div><b>No such patient id Found</b></div>
 <button type="submit" id="submit" onclick="submit()">Enter Patient ID</button>
 </body>
 </html>

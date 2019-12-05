@@ -6,10 +6,14 @@ pageEncoding="ISO-8859-1"%>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add Patient Details</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
 div {
@@ -17,27 +21,34 @@ margin-left: 30%;
 margin-right: 30%;
 padding: 1px;
 }
+
 .header {
-background-color: skyblue;
+background-color: DarkCyan;
 color: white;
 text-align: center;
-font-weight: bold;
-font-size: 20px;
+width: 40%;
+padding: 30px;
+margin-top: 5%;
+margin-left: 30%;
+margin-right: 30%;
 }
+
 .body {
-background-color: lightgray;
+background-color: gray;
 }
+
 .footer {
-background-color: skyblue;
+background-color: gray;
 /* margin-left: 30%;
 margin-right: 30%; */
 }
-label
-{
+
+label {
 margin-left: 2%;
 font-family: calibri;
 font-weight: bold;
 }
+
 input, select {
 margin: 2%;
 width: 95%;
@@ -45,91 +56,99 @@ padding: 12px 20px;
 margin: 8px;
 box-sizing: border-box;
 }
+
 input[type="radio"] {
 width: 5%;
 }
-input[type="submit"],input[type="reset"] {
+
+input[type="submit"], input[type="reset"] {
 width: 45%;
 }
-button {
-background-color: skyblue;
-border: none;
-color: white;
-padding: 15px 15px;
-text-align: center;
-text-decoration: none;
-font-size: 16px;
-font-weight: bold;
-width: 100%;
+
+input[type="submit"], input[type="reset"] {
+width: 45%;
+background-color: DarkCyan;
+
 }
 </style>
 <script>
 function checkDate() {
-	 var selectedDate = document.getElementById("dob").value;
-	  var now = new Date();
-	  var date= selectedDate.split("-");
-	  if ((date[0] == now.getFullYear() && date[1] == now.getMonth()+1 && date[2] > now.getDate())|| (date[0] == now.getFullYear() && date[1] > now.getMonth()+1) || date[0] > now.getFullYear()) {
-	   alert(" DOB must be in the past");
-	  }
-	}
+var selectedDate = document.getElementById("dob").value;
+var now = new Date();
+var date = selectedDate.split("-");
+if ((date[0] == now.getFullYear() && date[1] == now.getMonth() + 1 && date[2] > now
+.getDate())
+|| (date[0] == now.getFullYear() && date[1] > now.getMonth() + 1)
+|| date[0] > now.getFullYear()) {
+alert(" DOB must be in the past");
+}
+}
 </script>
 </head>
 <body>
 <div class="header">
 <h3>Add Patient Details</h3>
 </div>
-<form:form  method="POST" action="DoEnroll" modelAttribute="PatientBean">  
+<form:form method="POST" action="DoEnroll" modelAttribute="PatientBean">
 <div class="body">
-<label>Enter the First Name</label><br> 
-<form:input path="firstName" autofocus="true" placeholder=" Enter First Name" required="true"
+<label>Enter the First Name</label><br>
+<form:input path="firstName" autofocus="true"
+placeholder=" Enter First Name" required="true"
 pattern="^^[a-zA-Z\\s]*$" title="Name should only contain Alphabets"></form:input>
-<br>
-<label>Enter the Last Name</label><br> 
-<form:input path="lastName" required="true" placeholder=" Enter Last Name" pattern="^^[a-zA-Z\\s]*$"
-        title="Name should only contain Alphabets"></form:input>
-<br>
-
-<label>Enter Password</label><br> 
-<form:password path="password"  placeholder="Enter Password" required="true"  pattern="^[a-zA-Z]\w{3,8}$"  title="password can be alphanumeric with minimum 3 to maximum 8 characters"/>
-<br>
-
-<label>Enter DOB</label><br> 
-<form:input type="date" path="dob" id="dob" title="select correct date" required="true"  onchange="checkDate()"></form:input>
+<br> <label>Enter the Last Name</label><br>
+<form:input path="lastName" required="true"
+placeholder=" Enter Last Name" pattern="^^[a-zA-Z\\s]*$"
+title="Name should only contain Alphabets"></form:input>
+<br><label>Enter Password</label><br>
+<form:password path="password" placeholder="Enter Password"
+required="true" pattern="^[a-zA-Z]\w{3,8}$"
+title="password can be alphanumeric with minimum 3 to maximum 8 characters" />
+<br><label> Enter DOB</label><br>
+<form:input type="date" path="dob" id="dob"
+title="select correct date" required="true" onchange="checkDate()"></form:input>
 <br>
 <%-- <form:input type="date" path="dateOfDiagnosis" id="diagnosisDate" required="true" onchange="checkDate()"
 placeholder="Date of Diagnosis" /> --%>
-<label>Enter Email ID</label><br> 
-<form:input type="email"  placeholder="Enter email" path="email" required="true" title="enter email id of correct format"></form:input>
-<br>
-<label>Enter Contact Number</label><br> 
-<form:input path="contactNumber" placeholder=" Enter contactnumber"  required="true" pattern="(\\+91|0)[0-9]{10}" title="Contact number should contain 10 numbers"></form:input>
-<br>
-<label>Enter state</label><br> 
-<form:select path="state" required="true">  
-        <form:option value="Tamilnadu" label="Tamilnadu"/>  
-        <form:option value="kerala" label="kerala"/>  
-        <form:option value="Karanataka" label="Karanataka"/>  
-        <form:option value="Andra Pradesh" label="Andra Pradesh"/>  
-         <form:option value="uttra Pradesh" label="uttra Pradesh"/>
-          <form:option value="Madhaya Pradesh" label="Madhaya Pradesh"/>
-           <form:option value="Maharashtra" label="Maharashtra"/>
-        </form:select>
-<br>
+<label>Enter Email ID</label><br>
+<form:input type="email" placeholder="Enter email" path="email"
+required="true" title="enter email id of correct format"></form:input>
+<br> <label>Enter Contact Number</label><br>
+<form:input path="contactNumber" placeholder=" Enter contactnumber"
+required="true" pattern="(\\+91|0)[0-9]{10}"
+title="Contact number should contain 10 numbers"></form:input>
+<br><label> Enter state</label><br>
 
-<label>Enter Insurance plan</label><br> 
-<form:select path="insurancePlan" required="true">  
-     <form:option value="Bharti AXA Health Insurance" label="Bharti AXA Health Insurance"/>  
-        <form:option value="HDFC ERGO Health Insurance" label="HDFC ERGO Health Insurance"/>  
-        <form:option value="National Health Insurance" label="National Health Insurance"/>  
-        <form:option value="Universal Sompo General Health Insurance" label="Universal Sompo General Health Insurance"/>
-         <form:option value="Religare Health Insurance" label="Religare Health Insurance"/>
-         <form:option value="Star Health Insurance" label="Star Health Insurance"/>
-        </form:select>
-<br> 
+<form:select path="state" required="true">
+<form:option value="Tamilnadu" label="Tamilnadu" />
+<form:option value="kerala" label="kerala" />
+<form:option value="Karanataka" label="Karanataka" />
+<form:option value="Andra Pradesh" label="Andra Pradesh" />
+<form:option value="uttra Pradesh" label="uttra Pradesh" />
+<form:option value="Madhaya Pradesh" label="Madhaya Pradesh" />
+<form:option value="Maharashtra" label="Maharashtra" />
+</form:select>
+
+<br> <label>Enter Insurance plan</label><br>
+<form:select path="insurancePlan" required="true">
+<form:option value="Bharti AXA Health Insurance"
+label="Bharti AXA Health Insurance" />
+<form:option value="HDFC ERGO Health Insurance"
+label="HDFC ERGO Health Insurance" />
+<form:option value="National Health Insurance"
+label="National Health Insurance" />
+<form:option value="Universal Sompo General Health Insurance"
+label="Universal Sompo General Health Insurance" />
+<form:option value="Religare Health Insurance"
+label="Religare Health Insurance" />
+<form:option value="Star Health Insurance"
+label="Star Health Insurance" />
+</form:select>
+
+<br>
 </div>
 <div class="footer">
-<input type="submit" name="Submit" value="Submit" />
-<input type="reset" name="Reset" value="Reset" />
+<input type="submit" name="Submit" value="Submit" /> <input
+type="reset" name="Reset" value="Reset" />
 </div>
 </form:form>
 <a href="/">Home</a>
