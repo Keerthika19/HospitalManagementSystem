@@ -30,10 +30,19 @@ public class HospitalManagementController {
 	HospitalManagementService hospitalManagementService;
 
 	@RequestMapping(value = "/")
+	public String homePage() {
+		return "hospital";
+	}
+	
+	@RequestMapping(value = "/firstpage")
+	public String firstPage() {
+		return "firstpage";
+	}
+	/*@RequestMapping(value = "/")
 	public String index() {
 		return "welcome";
 	}
-
+*/
 	@RequestMapping(value = "/toaddDiagnosis")
 	public String login(Model model) {
 		model.addAttribute("details", new Diagnosis());

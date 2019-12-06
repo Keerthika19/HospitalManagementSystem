@@ -23,6 +23,6 @@
 		<tr><td><a href="${url}"><c:out value="${list.symptoms}" /></a></td></tr>
 	</c:forEach>
 	</table>
-	<a href="/" align="center">Home</a>
+	<a href="firstpage" align="center">Home</a>
 </body>
 </html>

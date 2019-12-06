@@ -70,5 +70,6 @@ background-color: skyblue;
 				<input type="submit" class="btn btn-info" value="Search ">
 		</div>
 	</form>
+	<a href="firstpage" align="center">Home</a>
 </body>
 </html>

@@ -76,7 +76,7 @@ oninput="setCustomValidity('')">
 oninvalid="this.setCustomValidity('Please select a State')"
 oninput="setCustomValidity('')">
 <option value="" disabled selected>Select the State</option>
-<option>Tamil nadu</option>
+<option>TamilNadu</option>
 <option>Kerala</option>
 <option>Karanataka</option>
 <option>Andra Pradesh</option>

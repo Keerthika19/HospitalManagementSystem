@@ -49,5 +49,6 @@ Text-align: center;
 
 </c:forEach>
 </table>
+<a href="firstpage" align="center">Home</a>
 </body>
 </html>

@@ -34,6 +34,6 @@ align: center;
 </head>
 <body>
 <div ><b>No Such Physician Details Found!!</b></div>
-<button type="submit" id="submit" onclick="submit()">Search Physician</button>
+<div><button type="submit" id="submit" onclick="submit()">Search Physician</button></div>
 <body>
 </html>

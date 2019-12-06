@@ -50,6 +50,6 @@
 			</tr>
 		</c:forEach>
 	</table>
-	<a href="/">Home</a>
+	<a href="firstpage" align="center">Home</a>
 </body>
 </html>

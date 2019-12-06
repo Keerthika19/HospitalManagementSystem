@@ -42,6 +42,6 @@ margin-right: 30%;
 		</tr>
 
 	</table>
-	<a href="/" align="center">Home</a>
+	<a href="firstpage" align="center">Home</a>
 </body>
 </html>

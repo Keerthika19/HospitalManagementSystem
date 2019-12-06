@@ -24,6 +24,6 @@
 <td>${details.billAmount}</td></tr>
 </table>
 <br>
-<a href="/" align="center">Home</a>
+<a href="firstpage" align="center">Home</a>
 </body>
 </html>

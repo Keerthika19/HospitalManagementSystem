@@ -34,6 +34,6 @@ align: center;
 </head>
 <body>
 <div><b>No such patient id Found</b></div>
-<button type="submit" id="submit" onclick="submit()">Enter Patient ID</button>
+<div><button type="submit" id="submit" onclick="submit()">Enter Patient ID</button></div>
 </body>
 </html>
