@@ -138,11 +138,15 @@ to {
 	/* function check(){
 		var user=document.getElementById("user").value;
 		var pass=document.getElementById("pass").value;
+		document.open();
+		document.write("user");
+		document.write("pass");
+		document.close();
 		if(user=="admin" && pass=="admin")
 			location.href="firstpage";
 		else
 			document.getElementById("reenter").innerHTML="Username and Password doesnot match";
-	} */
+	}  */
 </script>
 
 </head>
@@ -156,11 +160,11 @@ to {
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="#" class="nav-item nav-link active">Home</a>
-                <a href="#" class="nav-item nav-link active">Enroll Patient</a>
+               <!--  <a href="#" class="nav-item nav-link active">Enroll Patient</a>
                 <a href="#" class="nav-item nav-link active">Enroll Physician</a>
                 <a href="#" class="nav-item nav-link active">Search Physician</a>
                 <a href="#" class="nav-item nav-link active">Add Diagnosis</a>
-                <a href="#" class="nav-item nav-link active">View Patient History</a>
+                <a href="#" class="nav-item nav-link active">View Patient History</a> -->
             </div>
         </div>
     </div>    
